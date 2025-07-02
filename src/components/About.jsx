@@ -1,3 +1,5 @@
+import indianFoodImg from '../assets/indian_food_2.0.jpg';
+
 export default function About() {
   return (
     <section className="about bg-off-white relative overflow-hidden py-16" id="about">
@@ -19,7 +21,7 @@ export default function About() {
             <p className="text-text-light">Experience a true taste of India in every bite—made with love, tradition, and care.</p>
           </div>
           <div className="about-img flex-1 rounded-lg overflow-hidden shadow-lg">
-            <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Chef preparing Indian food" className="w-full h-auto object-cover" />
+            <img src={indianFoodImg} alt="Authentic Indian food at Kushi Restaurant" className="w-full h-auto object-cover" />
           </div>
         </div>
       </div>

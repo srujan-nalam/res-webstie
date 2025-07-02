@@ -6,12 +6,45 @@ export default function Catering() {
     name: '', email: '', phone: '', eventDate: '', guests: '', message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  // Placeholder for form submission
-  const handleSubmit = (e) => {
+  // Replace 'YOUR_FORM_ID' with your actual Formspree form ID
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xyzjvwvk';
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // In production, send form data to backend or email service
-    setSubmitted(true);
+    setLoading(true);
+    setError('');
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          eventDate: form.eventDate,
+          guests: form.guests,
+          message: form.message,
+          subject: `Catering Request from ${form.name}`,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setForm({ name: '', email: '', phone: '', eventDate: '', guests: '', message: '' });
+      } else {
+        setError('There was an error submitting your request. Please try again.');
+      }
+    } catch (err) {
+      setError('There was an error submitting your request. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -58,7 +91,10 @@ export default function Catering() {
         <div className="catering-form bg-white p-8 rounded-lg shadow-lg max-w-2xl mx-auto">
           <h3 className="text-xl font-bold text-primary-orange mb-6">Request Catering Information</h3>
           {submitted ? (
-            <div className="text-green-600 font-semibold text-center">Thank you! Your request has been submitted.</div>
+            <div className="text-green-600 font-semibold text-center py-4">
+              <div className="text-2xl mb-2">✅</div>
+              Thank you! Your catering request has been submitted successfully. We'll get back to you within 24 hours.
+            </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="form-group">
@@ -85,7 +121,22 @@ export default function Catering() {
                 <label htmlFor="message" className="block mb-1 font-medium text-text-dark">Additional Information</label>
                 <textarea id="message" className="w-full border border-gray-200 rounded px-4 py-2" value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} />
               </div>
-              <button type="submit" className="btn bg-primary-orange text-white px-6 py-2 rounded-full font-semibold hover:bg-light-orange transition-all duration-200">Submit Request</button>
+              {error && (
+                <div className="text-red-600 text-sm text-center bg-red-50 p-3 rounded">
+                  {error}
+                </div>
+              )}
+              <button 
+                type="submit" 
+                disabled={loading}
+                className={`btn px-6 py-2 rounded-full font-semibold transition-all duration-200 ${
+                  loading 
+                    ? 'bg-gray-400 cursor-not-allowed' 
+                    : 'bg-primary-orange text-white hover:bg-light-orange'
+                }`}
+              >
+                {loading ? 'Submitting...' : 'Submit Request'}
+              </button>
             </form>
           )}
         </div>

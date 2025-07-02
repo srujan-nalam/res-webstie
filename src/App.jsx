@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import Menu from './components/Menu';
-import Reviews from './components/Reviews';
+// import Reviews from './components/Reviews';
 import Catering from './components/Catering';
 import Delivery from './components/Delivery';
 import Contact from './components/Contact';
@@ -29,7 +29,7 @@ function App() {
         <Hero />
         <About />
         <Menu />
-        <Reviews />
+        {/* <Reviews /> */}
         <Catering />
         <Delivery />
         <Contact />
