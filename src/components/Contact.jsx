@@ -11,7 +11,7 @@ const CONTACT_INFO = [
   {
     icon: faPhoneAlt,
     title: 'Phone',
-    content: <a href="tel:+19132427381" className="hover:underline">+1 (913) 242-7381</a>,
+    content: <div><a href="tel:+19132427381" className="hover:underline">+1 (913) 242-7381</a><br /><a href="tel:+19137356681" className="hover:underline">+1 (913) 735-6681</a></div>,
   },
   {
     icon: faEnvelope,
@@ -21,7 +21,7 @@ const CONTACT_INFO = [
   {
     icon: faClock,
     title: 'Hours',
-    content: <div>Monday - Thursday: 10am - 11:30pm<br />Friday : 10am - 1am<br /> Saturday: 8am - 1am<br />Sunday: 8am - 12:30am</div>,
+    content: <div>Monday: 10am - 11:30pm<br />Tuesday: 10am - 11:30pm<br />Wednesday: 10am - 11:30pm<br />Thursday: 10am - 11:30pm<br />Friday : 10am - 1am<br /> Saturday: 8am - 1am<br />Sunday: 8am - 12:30am</div>,
   },
 ];
 

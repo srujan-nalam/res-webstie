@@ -19,7 +19,7 @@ export default function Header() {
     <header className="fixed top-0 left-0 w-full bg-white shadow z-50">
       <div className="container mx-auto flex justify-between items-center py-4 px-4 md:px-0">
         <div className="flex items-center logo">
-          <img src={logoImg} alt="Kushi Indian Restaurant Logo" className="h-12 w-12 mr-2 rounded-full" />
+          <img src={logoImg} alt="Kushi Indian Restaurant Logo" className="h-12 w-12 mr-2 full" />
           <h1 className="text-xl md:text-2xl font-bold text-red-600 tracking-wide">KUSHI <span className="text-text-dark">Indian Restaurant</span></h1>
         </div>
         <nav className="hidden md:block">

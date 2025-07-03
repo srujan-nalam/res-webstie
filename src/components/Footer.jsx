@@ -23,7 +23,7 @@ const CONTACT_INFO = [
   },
   {
     icon: faPhoneAlt,
-    content: <a href="tel:+19132427381" className="hover:underline"> +1 (913) 242-7381</a>,
+    content: <div><a href="tel:+19132427381" className="hover:underline"> +1 (913) 242-7381</a><br /><a href="tel:+19137356681" className="hover:underline"> +1 (913) 735-6681</a></div>,
   },
   {
     icon: faEnvelope,
