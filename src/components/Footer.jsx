@@ -19,7 +19,7 @@ const MENU_LINKS = [
 const CONTACT_INFO = [
   {
     icon: faMapMarkerAlt,
-    content: '4856 Metcalf Ave, Overland Park, KS 66223',
+    content: '14856 Metcalf Ave, Overland Park, KS 66223',
   },
   {
     icon: faPhoneAlt,
