@@ -42,7 +42,7 @@ export default function Footer() {
               <span className="block w-10 h-1 bg-gold mt-2"></span>
             </div>
             <p className="text-gray-400">Bringing authentic Indian flavors to your table. Our passion for traditional recipes and fresh ingredients makes every meal a memorable experience.</p>
-            <a href="YOUR_ONLINE_ORDER_LINK" className="btn bg-primary-orange text-white mt-6 inline-block px-6 py-2 rounded-full font-semibold hover:bg-light-orange transition-all duration-200">Order Online</a>
+            <a href="https://food.orders.co/b9uydd6q" className="btn bg-primary-orange text-white mt-6 inline-block px-6 py-2 rounded-full font-semibold hover:bg-light-orange transition-all duration-200">Order Online</a>
           </div>
           <div className="footer-links">
             <h3 className="text-lg font-bold mb-4 relative">Quick Links
